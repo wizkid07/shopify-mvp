@@ -2,6 +2,50 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Product {
+  """Product ID"""
+  id: Float!
+
+  """Product Title"""
+  title: String!
+
+  """Body HTML"""
+  body_html: String!
+
+  """Product Vendor"""
+  vendor: String!
+
+  """Product Type"""
+  product_type: String!
+
+  """Created At"""
+  created_at: String!
+
+  """Updated At"""
+  updated_at: String!
+
+  """Handle"""
+  handle: String!
+
+  """Published At"""
+  published_at: String!
+
+  """Template Suffix"""
+  template_suffix: String!
+
+  """Status"""
+  status: String!
+
+  """Published Scope"""
+  published_scope: String!
+
+  """Product Tags"""
+  tags: String!
+
+  """Admin graphql API ID"""
+  admin_graphql_api_id: String!
+}
+
 type Merchant {
   """Merchant Id"""
   id: String
@@ -21,7 +65,14 @@ type DeleteOutput {
 }
 
 type Query {
+  singleProduct(product: ProductFetchInput!): Product!
   displayMerchants: [Merchant!]!
+  displayMerchantByAppid(appid: Int!): Merchant!
+}
+
+input ProductFetchInput {
+  appid: Float!
+  productid: Float!
 }
 
 type Mutation {

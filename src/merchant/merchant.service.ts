@@ -15,6 +15,14 @@ export class MerchantService {
         return this.prisma.merchant.findMany();
     }
 
+    async getMerchantByAppid(appid:number):Promise<Merchant|null>{
+        return this.prisma.merchant.findUnique({
+            where:{
+                merchant_appid:appid
+            }
+        })
+    }
+
     async deleteAllMerchants():Promise<{count:number}>{
         return this.prisma.merchant.deleteMany({});
     }

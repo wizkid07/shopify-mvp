@@ -1,8 +1,9 @@
-import { Resolver,Query, Mutation, Args } from '@nestjs/graphql';
+import { Resolver,Query, Mutation, Args, Int } from '@nestjs/graphql';
 import { MerchantCreateInput } from './dto/merchant.input';
 import { MerchantService } from './merchant.service';
 import { Merchant } from './models/merchant.model';
 import { DeleteOutput} from './dto/delete.output'
+import { type } from 'os';
 
 @Resolver(of=>Merchant)
 export class MerchantResolver {
@@ -11,6 +12,11 @@ export class MerchantResolver {
     @Query(returns=>[Merchant])
     async displayMerchants():Promise<Merchant[]|null>{
         return this.merchantService.getAllMerchants();
+    }
+
+    @Query(returns=>Merchant)
+    async displayMerchantByAppid(@Args('appid', { type: () => Int }) appid: number):Promise<Merchant|null>{
+        return this.merchantService.getMerchantByAppid(appid);
     }
 
     @Mutation(returns=>Merchant)
