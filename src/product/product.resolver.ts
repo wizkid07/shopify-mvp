@@ -15,8 +15,6 @@ export class ProductResolver {
 
         const shopifyProduct:any = await this.productService.fetchSingleProduct(merchant_domain,productid,accessKeyToken);
 
-        console.log(shopifyProduct);
-
         const {id,title,body_html,vendor,product_type,created_at,handle,updated_at,published_at,template_suffix,status,published_scope,tags,admin_graphql_api_id} = shopifyProduct.product;
 
         return {id,title,body_html,vendor,product_type,created_at,handle,updated_at,published_at,template_suffix,status,published_scope,tags,admin_graphql_api_id};
