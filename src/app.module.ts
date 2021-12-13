@@ -5,6 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { join } from 'path';
 import {PrismaService} from './prisma.service'
+import { MerchantResolver } from './merchant/merchant.resolver';
+import { MerchantService } from './merchant/merchant.service';
 
 @Module({
   imports: [GraphQLModule.forRoot({
@@ -14,6 +16,6 @@ import {PrismaService} from './prisma.service'
     playground:false
   })],
   controllers: [AppController],
-  providers: [AppService,PrismaService],
+  providers: [AppService,PrismaService, MerchantResolver, MerchantService],
 })
 export class AppModule {}

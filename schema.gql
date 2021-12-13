@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Merchant {
+  """Merchant Id"""
+  id: String
+
+  """Merchant Domain"""
+  merchant_domain: String!
+
+  """Merchant appid"""
+  merchant_appid: Float!
+
+  """Merchant AccessKeyToken"""
+  accessKeyToken: String!
+}
+
+type DeleteOutput {
+  count: Float!
+}
+
+type Query {
+  displayMerchants: [Merchant!]!
+}
+
+type Mutation {
+  registerMerchant(merchant: MerchantCreateInput!): Merchant!
+  clearMerchants: DeleteOutput!
+}
+
+input MerchantCreateInput {
+  merchant_domain: String!
+  accessKeyToken: String!
+}
