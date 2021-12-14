@@ -4,6 +4,7 @@ CREATE TABLE "Merchant" (
     "merchant_domain" TEXT NOT NULL,
     "merchant_appid" SERIAL NOT NULL,
     "accessKeyToken" TEXT NOT NULL,
+    "storefront_accesskeytoken" TEXT NOT NULL,
 
     CONSTRAINT "Merchant_pkey" PRIMARY KEY ("id")
 );

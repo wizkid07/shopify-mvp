@@ -7,4 +7,7 @@ export class MerchantCreateInput{
 
     @Field()
     accessKeyToken:string
+
+    @Field()
+    storefront_accesskeytoken:string
 }

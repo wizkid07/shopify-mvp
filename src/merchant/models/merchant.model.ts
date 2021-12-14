@@ -13,4 +13,7 @@ export class Merchant{
 
 	@Field({description:"Merchant AccessKeyToken"})
 	accessKeyToken: string
+
+	@Field({description:"Merchant Storefront accessTokem"})
+	storefront_accesskeytoken:string
 }

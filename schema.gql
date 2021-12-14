@@ -31,19 +31,19 @@ type Product {
   published_at: String!
 
   """Template Suffix"""
-  template_suffix: String!
-
-  """Status"""
-  status: String!
-
-  """Published Scope"""
-  published_scope: String!
+  template_suffix: String
 
   """Product Tags"""
   tags: String!
 
+  """Status"""
+  status: String
+
+  """Published Scope"""
+  published_scope: String
+
   """Admin graphql API ID"""
-  admin_graphql_api_id: String!
+  admin_graphql_api_id: String
 }
 
 type Merchant {
@@ -58,6 +58,9 @@ type Merchant {
 
   """Merchant AccessKeyToken"""
   accessKeyToken: String!
+
+  """Merchant Storefront accessTokem"""
+  storefront_accesskeytoken: String!
 }
 
 type DeleteOutput {
@@ -66,6 +69,7 @@ type DeleteOutput {
 
 type Query {
   singleProduct(product: ProductFetchInput!): Product!
+  multipleProducts: [Product!]!
   displayMerchants: [Merchant!]!
   displayMerchantByAppid(appid: Int!): Merchant!
 }
@@ -83,4 +87,5 @@ type Mutation {
 input MerchantCreateInput {
   merchant_domain: String!
   accessKeyToken: String!
+  storefront_accesskeytoken: String!
 }

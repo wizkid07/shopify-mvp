@@ -30,18 +30,18 @@ export class Product {
     @Field({description:'Published At'})
     published_at:string
 
-    @Field({description:'Template Suffix'})
+    @Field({nullable:true, description:'Template Suffix'})
     template_suffix:string
-
-    @Field({description:'Status'})
-    status:String
-
-    @Field({description:'Published Scope'})
-    published_scope:string
 
     @Field({description:'Product Tags'})
     tags:string
 
-    @Field({description:'Admin graphql API ID'})
+    @Field({nullable:true,description:'Status'})
+    status:String
+
+    @Field({nullable:true,description:'Published Scope'})
+    published_scope:string
+    
+    @Field({nullable:true,description:'Admin graphql API ID'})
     admin_graphql_api_id: string
 }

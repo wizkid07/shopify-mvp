@@ -15,6 +15,7 @@ model Merchant{
   merchant_domain String
   merchant_appid Int @unique @default(autoincrement())
   accessKeyToken String
+  storefront_accesskeytoken String
 }
 
 

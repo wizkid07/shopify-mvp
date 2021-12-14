@@ -20,4 +20,26 @@ export class ProductResolver {
         return {id,title,body_html,vendor,product_type,created_at,handle,updated_at,published_at,template_suffix,status,published_scope,tags,admin_graphql_api_id};
 
     }
+
+    @Query(returns=>[Product])
+    async multipleProducts():Promise<Product[]|null>{
+        const shopifyProducts = await this.productService.fetchMultipleProducts();
+        
+        return [{
+            "id": 6977062502583,
+            "title": "old Watch 2",
+            "body_html": "",
+            "vendor": "guhan-vjro",
+            "product_type": "",
+            "created_at": "2021-09-09T15:54:13+05:30",
+            "handle": "new-watch",
+            "updated_at": "2021-10-04T12:00:24+05:30",
+            "published_at": "2021-09-09T15:54:15+05:30",
+            "admin_graphql_api_id": "gid://shopify/Product/6977062502583",
+            "tags": "",
+            "status": "active",
+            "template_suffix": "",
+            "published_scope": "web"
+        }]
+    }
 }
