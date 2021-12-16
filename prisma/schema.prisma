@@ -14,8 +14,9 @@ model Merchant{
   id String @id @default(uuid())
   merchant_domain String
   merchant_appid Int @unique @default(autoincrement())
-  accessKeyToken String
-  storefront_accesskeytoken String
+  access_token_key String
+  access_token_secret String
+  platform String
 }
 
 

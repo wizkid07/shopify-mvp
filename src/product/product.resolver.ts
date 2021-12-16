@@ -7,24 +7,31 @@ import { ProductService } from './product.service';
 @Resolver(of=>Product)
 export class ProductResolver {
     constructor(private productService:ProductService,private merchantService:MerchantService){}
-    @Query(returns=>Product)
+    @Query(returns=>Product,{nullable:true})
     async singleProduct(@Args('product')productFetchInput:ProductFetchInput):Promise<Product|null>{
         const{appid,productid} = productFetchInput;
 
-        const {merchant_domain,accessKeyToken} = await this.merchantService.getMerchantByAppid(appid);
+        const {merchant_domain,access_token_key,access_token_secret,platform} = await this.merchantService.getMerchantByAppid(appid);
 
-        const shopifyProduct:any = await this.productService.fetchSingleProduct(merchant_domain,productid,accessKeyToken);
+        if(platform === "SHOPIFY"){
 
-        const {id,title,body_html,vendor,product_type,created_at,handle,updated_at,published_at,template_suffix,status,published_scope,tags,admin_graphql_api_id} = shopifyProduct.product;
+            const shopifyProduct:any = await this.productService.fetchSingleProduct(merchant_domain,productid,access_token_key);
+            if(!shopifyProduct) return null;
+            const {id,title,body_html,vendor,product_type,created_at,handle,updated_at,published_at,template_suffix,status,published_scope,tags,admin_graphql_api_id} = shopifyProduct.product;
+            return {id,title,body_html,vendor,product_type,created_at,handle,updated_at,published_at,template_suffix,status,published_scope,tags,admin_graphql_api_id};
 
-        return {id,title,body_html,vendor,product_type,created_at,handle,updated_at,published_at,template_suffix,status,published_scope,tags,admin_graphql_api_id};
+        }else if (platform === "WOOCOMMERCE"){
 
+            const wooProduct:any = await this.productService.fetchWooProduct(merchant_domain,productid,access_token_key,access_token_secret)
+            if(!wooProduct) return ;
+            const {id,name:title,slug:handle,date_created:created_at,date_modified:updated_at,description:body_html,status} = wooProduct
+            return {id,title,body_html,vendor:null,product_type:null,created_at,handle,updated_at,published_at:null,template_suffix:null,status,published_scope:null,tags:null,admin_graphql_api_id:null}
+        }
     }
 
     @Query(returns=>[Product])
     async multipleProducts():Promise<Product[]|null>{
-        const shopifyProducts = await this.productService.fetchMultipleProducts();
-        
+        // const shopifyProducts = await this.productService.fetchMultipleProducts();
         return [{
             "id": 6977062502583,
             "title": "old Watch 2",

@@ -1,4 +1,4 @@
-import { ObjectType, Field } from '@nestjs/graphql'
+import { ObjectType, Field, registerEnumType } from '@nestjs/graphql'
 
 
 @ObjectType()
@@ -9,31 +9,31 @@ export class Product {
     @Field({description:'Product Title'})
     title: string
 
-    @Field({description:'Body HTML'})
+    @Field({nullable:true,description:'Body HTML'})
     body_html: string
 
-    @Field({description:'Product Vendor'})
+    @Field({nullable:true,description:'Product Vendor'})
     vendor:string
 
-    @Field({description:'Product Type'})
+    @Field({nullable:true,description:'Product Type'})
     product_type:string
 
-    @Field({description:'Created At'})
+    @Field({nullable:true,description:'Created At'})
     created_at:string
 
-    @Field({description:'Updated At'})
+    @Field({nullable:true,description:'Updated At'})
     updated_at:string
 
-    @Field({description:'Handle'})
+    @Field({nullable:true,description:'Handle'})
     handle:string
 
-    @Field({description:'Published At'})
+    @Field({nullable:true,description:'Published At'})
     published_at:string
 
     @Field({nullable:true, description:'Template Suffix'})
     template_suffix:string
 
-    @Field({description:'Product Tags'})
+    @Field({nullable:true,description:'Product Tags'})
     tags:string
 
     @Field({nullable:true,description:'Status'})

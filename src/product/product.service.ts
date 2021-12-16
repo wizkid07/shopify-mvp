@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { RequestHelpers } from 'src/utils/helper';
-
+import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api"
 @Injectable()
 export class ProductService {
     constructor(private requestHelper:RequestHelpers) {}
@@ -94,6 +94,25 @@ export class ProductService {
     const products =  await this.requestHelper.POSTRequestHelper(options);
 
     console.log(JSON.stringify(products, null, 4));
+  }
+
+  async fetchWooProduct(merchant_domain:string,productid:number,customerKey:string,customerSecret:string){
+    
+    const WooCommerce = new WooCommerceRestApi({
+			url: `https://${merchant_domain}/`,
+			consumerKey: customerKey,
+			consumerSecret: customerSecret,
+			queryStringAuth: true
+		})
+
+    try{
+      const productRequest = await WooCommerce.get(`products/${productid}`)
+      return productRequest.data;
+    }catch(e){
+      return null;
+    }
+
+
   }
     
 }

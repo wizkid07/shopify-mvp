@@ -6,8 +6,11 @@ export class MerchantCreateInput{
     merchant_domain:string
 
     @Field()
-    accessKeyToken:string
+    access_token_key:string
 
     @Field()
-    storefront_accesskeytoken:string
+    access_token_secret:string
+
+    @Field()
+    platform:string
 }

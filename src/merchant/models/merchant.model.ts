@@ -1,4 +1,5 @@
-import { ObjectType,Field } from "@nestjs/graphql";
+import { ObjectType,Field, registerEnumType } from "@nestjs/graphql";
+import { platform } from "os";
 
 @ObjectType()
 export class Merchant{
@@ -12,8 +13,11 @@ export class Merchant{
 	merchant_appid: number
 
 	@Field({description:"Merchant AccessKeyToken"})
-	accessKeyToken: string
+	access_token_key: string
 
 	@Field({description:"Merchant Storefront accessTokem"})
-	storefront_accesskeytoken:string
+	access_token_secret:string
+
+	@Field({description:"Supported Platforms"})
+	platform: string
 }

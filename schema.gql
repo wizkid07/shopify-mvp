@@ -10,31 +10,31 @@ type Product {
   title: String!
 
   """Body HTML"""
-  body_html: String!
+  body_html: String
 
   """Product Vendor"""
-  vendor: String!
+  vendor: String
 
   """Product Type"""
-  product_type: String!
+  product_type: String
 
   """Created At"""
-  created_at: String!
+  created_at: String
 
   """Updated At"""
-  updated_at: String!
+  updated_at: String
 
   """Handle"""
-  handle: String!
+  handle: String
 
   """Published At"""
-  published_at: String!
+  published_at: String
 
   """Template Suffix"""
   template_suffix: String
 
   """Product Tags"""
-  tags: String!
+  tags: String
 
   """Status"""
   status: String
@@ -57,10 +57,13 @@ type Merchant {
   merchant_appid: Float!
 
   """Merchant AccessKeyToken"""
-  accessKeyToken: String!
+  access_token_key: String!
 
   """Merchant Storefront accessTokem"""
-  storefront_accesskeytoken: String!
+  access_token_secret: String!
+
+  """Supported Platforms"""
+  platform: String!
 }
 
 type DeleteOutput {
@@ -68,7 +71,7 @@ type DeleteOutput {
 }
 
 type Query {
-  singleProduct(product: ProductFetchInput!): Product!
+  singleProduct(product: ProductFetchInput!): Product
   multipleProducts: [Product!]!
   displayMerchants: [Merchant!]!
   displayMerchantByAppid(appid: Int!): Merchant!
@@ -86,6 +89,7 @@ type Mutation {
 
 input MerchantCreateInput {
   merchant_domain: String!
-  accessKeyToken: String!
-  storefront_accesskeytoken: String!
+  access_token_key: String!
+  access_token_secret: String!
+  platform: String!
 }

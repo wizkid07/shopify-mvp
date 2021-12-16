@@ -1,0 +1,211 @@
+{
+    "id": 3344,
+    "name": "Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox - 1-Year Rescue Service (STGX2000400)",
+    "slug": "final-test",
+    "permalink": "https://woo-store1.blynklive.com/product/final-test/",
+    "date_created": "2021-10-11T20:26:31",
+    "date_created_gmt": "2021-10-11T20:26:31",
+    "date_modified": "2021-10-27T11:08:23",
+    "date_modified_gmt": "2021-10-27T11:08:23",
+    "type": "variable",
+    "status": "publish",
+    "featured": false,
+    "catalog_visibility": "visible",
+    "description": "<div id=\"ppd\">\n<div id=\"centerCol\" class=\"centerColAlign centerColAlign-bbcxoverride\">\n<div id=\"featurebullets_feature_div\" class=\"celwidget\" data-feature-name=\"featurebullets\" data-csa-c-id=\"1slr09-r47m7b-1r7m4j-5hutbe\" data-cel-widget=\"featurebullets_feature_div\">\n<div id=\"feature-bullets\" class=\"a-section a-spacing-medium a-spacing-top-small\">\n<ul class=\"a-unordered-list a-vertical a-spacing-mini\">\n<li><span class=\"a-list-item\">Easily store and access 2TB to content on the go with the Seagate Portable Drive, a USB external hard drive</span></li>\n<li><span class=\"a-list-item\">Designed to work with Windows or Mac computers, this external hard drive makes backup a snap just drag and drop</span></li>\n<li><span class=\"a-list-item\">To get set up, connect the portable hard drive to a computer for automatic recognition no software required</span></li>\n<li><span class=\"a-list-item\">This USB drive provides plug and play simplicity with the included 18 inch USB 3.0 cable</span></li>\n</ul>\n</div>\n</div>\n</div>\n</div>\n",
+    "short_description": "<table class=\"a-normal a-spacing-micro",
+    "sku": "External Hard Drives by Seagate",
+    "price": "109.99",
+    "regular_price": "",
+    "sale_price": "",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": true,
+    "purchasable": true,
+    "total_sales": 0,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [
+
+    ],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "external_url": "",
+    "button_text": "",
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": true,
+    "stock_quantity": 20,
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "low_stock_amount": 2,
+    "sold_individually": false,
+    "weight": "1",
+    "dimensions": {
+        "length": "10",
+        "width": "10",
+        "height": "10"
+    },
+    "shipping_required": true,
+    "shipping_taxable": true,
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "reviews_allowed": true,
+    "average_rating": "0.00",
+    "rating_count": 0,
+    "upsell_ids": [
+
+    ],
+    "cross_sell_ids": [
+
+    ],
+    "parent_id": 0,
+    "purchase_note": "",
+    "categories": [{
+            "id": 15,
+            "name": "Uncategorized",
+            "slug": "uncategorized"
+        },
+        {
+            "id": 23,
+            "name": "Accessories",
+            "slug": "accessories"
+        },
+        {
+            "id": 53,
+            "name": "Electronics",
+            "slug": "electronics"
+        }
+    ],
+    "tags": [{
+            "id": 108,
+            "name": "electronics",
+            "slug": "electronics"
+        },
+        {
+            "id": 107,
+            "name": "Hard disk",
+            "slug": "hard-disk"
+        }
+    ],
+    "images": [{
+            "id": 3554,
+            "date_created": "2021-10-27T10:35:29",
+            "date_created_gmt": "2021-10-27T10:35:29",
+            "date_modified": "2021-10-27T10:35:38",
+            "date_modified_gmt": "2021-10-27T10:35:38",
+            "src": "https://woo-store1.blynklive.com/wp-content/uploads/2021/10/Screenshot-2021-10-27-3.54.46-PM.png",
+            "name": "Hard disk",
+            "alt": ""
+        },
+        {
+            "id": 3553,
+            "date_created": "2021-10-27T10:35:27",
+            "date_created_gmt": "2021-10-27T10:35:27",
+            "date_modified": "2021-10-27T10:35:27",
+            "date_modified_gmt": "2021-10-27T10:35:27",
+            "src": "https://woo-store1.blynklive.com/wp-content/uploads/2021/10/Screenshot-2021-10-27-3.55.06-PM.png",
+            "name": "Screenshot 2021-10-27 3.55.06 PM",
+            "alt": ""
+        },
+        {
+            "id": 3551,
+            "date_created": "2021-10-27T10:35:23",
+            "date_created_gmt": "2021-10-27T10:35:23",
+            "date_modified": "2021-10-27T10:36:00",
+            "date_modified_gmt": "2021-10-27T10:36:00",
+            "src": "https://woo-store1.blynklive.com/wp-content/uploads/2021/10/Screenshot-2021-10-27-3.55.41-PM.png",
+            "name": "Hard disk",
+            "alt": ""
+        }
+    ],
+    "attributes": [{
+            "id": 0,
+            "name": "Capacity",
+            "position": 0,
+            "visible": true,
+            "variation": true,
+            "options": [
+                "Array"
+            ]
+        },
+        {
+            "id": 1,
+            "name": "color",
+            "position": 1,
+            "visible": true,
+            "variation": true,
+            "options": [
+                "Array"
+            ]
+        },
+        {
+            "id": 0,
+            "name": "Style",
+            "position": 2,
+            "visible": true,
+            "variation": true,
+            "options": [
+                "Array"
+            ]
+        }
+    ],
+    "default_attributes": [
+
+    ],
+    "variations": [
+        3565,
+        3566,
+        3567,
+        3575,
+        3576,
+        3577,
+        3578,
+        3579,
+        3580,
+        3581
+    ],
+    "grouped_products": [
+
+    ],
+    "menu_order": 0,
+    "price_html": "<span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#36;</span>110</bdi></span> &ndash; <span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#36;</span>251</bdi></span> <small class=\"woocommerce-price-suffix\">ex VAT</small>",
+    "related_ids": [
+        3328,
+        2835,
+        2883,
+        2837,
+        2938
+    ],
+    "meta_data": [{
+            "id": 8696,
+            "key": "site-sidebar-layout",
+            "value": "default"
+        },
+        {
+            "id": 8697,
+            "key": "site-content-layout",
+            "value": "default"
+        },
+        {
+            "id": 8698,
+            "key": "theme-transparent-header-meta",
+            "value": "default"
+        }
+    ],
+    "stock_status": "instock",
+    "_links": {
+        "self": [
+            [
+                "Object"
+            ]
+        ],
+        "collection": [
+            [
+                "Object"
+            ]
+        ]
+    }
+}
