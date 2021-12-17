@@ -15,20 +15,20 @@ export class ProductResolver {
     ){}
     @Query(returns=>Product,{nullable:true})
     async singleProduct(@Args('product')productFetchInput:ProductFetchInput):Promise<Product|null>{
-        
+
         const{appid,productid} = productFetchInput;
         const {merchant_domain,access_token_key,access_token_secret,platform} = await this.merchantService.getMerchantByAppid(appid);
         if(platform === "SHOPIFY"){
 
             const shopifyProduct:any = await this.productService.fetchSingleProduct(merchant_domain,productid,access_token_key);
-            if(!shopifyProduct) return null;
+            if(!shopifyProduct) return null
             const nxtProduct = this.mapperService.jsonMapper(shopifyProduct.product,ShopifyProductMapper)
             return nxtProduct;
 
         }else if (platform === "WOOCOMMERCE"){
 
             const wooProduct:any = await this.productService.fetchWooProduct(merchant_domain,productid,access_token_key,access_token_secret)
-            if(!wooProduct) return ;
+            if(!wooProduct) return null
             const nxtProduct = this.mapperService.jsonMapper(wooProduct,WooCommerceProductMapper)
             return nxtProduct;
         }
