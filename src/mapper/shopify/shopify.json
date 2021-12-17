@@ -1,0 +1,16 @@
+{
+    "id": "id",
+    "title": "title",
+    "body_html": "body_html",
+    "vendor": "vendor",
+    "product_type": "product_type",
+    "created_at": "created_at",
+    "handle": "handle",
+    "updated_at": "updated_at",
+    "published_at": "published_at",
+    "template_suffix": "template_suffix",
+    "status": "status",
+    "published_scope": "published_scope",
+    "tags": "tags",
+    "admin_graphql_api_id": "admin_graphql_api_id"
+}

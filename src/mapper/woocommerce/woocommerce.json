@@ -1,0 +1,16 @@
+{
+    "id": "id",
+    "title": "name",
+    "body_html": "description",
+    "vendor": "vendor",
+    "product_type": "product_type",
+    "created_at": "date_created",
+    "handle": "slug",
+    "updated_at": "date_modified",
+    "published_at": "published_at",
+    "template_suffix": "template_suffix",
+    "status": "status",
+    "published_scope": "published_scope",
+    "tags": "$join(tags.name,',')",
+    "admin_graphql_api_id": "admin_graphql_api_id"
+}

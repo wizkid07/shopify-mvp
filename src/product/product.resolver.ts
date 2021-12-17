@@ -1,31 +1,36 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { MerchantService } from 'src/merchant/merchant.service';
+import { MapperService } from 'src/utils/helper';
 import { ProductFetchInput } from './dto/product.input';
 import { Product } from './models/product.model';
 import { ProductService } from './product.service';
-
+import * as ShopifyProductMapper from '../mapper/shopify/shopify.json'
+import * as WooCommerceProductMapper from '../mapper/woocommerce/woocommerce.json'
 @Resolver(of=>Product)
 export class ProductResolver {
-    constructor(private productService:ProductService,private merchantService:MerchantService){}
+    constructor(
+        private productService:ProductService,
+        private merchantService:MerchantService,
+        private mapperService:MapperService
+    ){}
     @Query(returns=>Product,{nullable:true})
     async singleProduct(@Args('product')productFetchInput:ProductFetchInput):Promise<Product|null>{
+        
         const{appid,productid} = productFetchInput;
-
         const {merchant_domain,access_token_key,access_token_secret,platform} = await this.merchantService.getMerchantByAppid(appid);
-
         if(platform === "SHOPIFY"){
 
             const shopifyProduct:any = await this.productService.fetchSingleProduct(merchant_domain,productid,access_token_key);
             if(!shopifyProduct) return null;
-            const {id,title,body_html,vendor,product_type,created_at,handle,updated_at,published_at,template_suffix,status,published_scope,tags,admin_graphql_api_id} = shopifyProduct.product;
-            return {id,title,body_html,vendor,product_type,created_at,handle,updated_at,published_at,template_suffix,status,published_scope,tags,admin_graphql_api_id};
+            const nxtProduct = this.mapperService.jsonMapper(shopifyProduct.product,ShopifyProductMapper)
+            return nxtProduct;
 
         }else if (platform === "WOOCOMMERCE"){
 
             const wooProduct:any = await this.productService.fetchWooProduct(merchant_domain,productid,access_token_key,access_token_secret)
             if(!wooProduct) return ;
-            const {id,name:title,slug:handle,date_created:created_at,date_modified:updated_at,description:body_html,status} = wooProduct
-            return {id,title,body_html,vendor:null,product_type:null,created_at,handle,updated_at,published_at:null,template_suffix:null,status,published_scope:null,tags:null,admin_graphql_api_id:null}
+            const nxtProduct = this.mapperService.jsonMapper(wooProduct,WooCommerceProductMapper)
+            return nxtProduct;
         }
     }
 
